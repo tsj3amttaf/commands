@@ -1,0 +1,26 @@
+--- GITHUB ---
+
+Upload key on server
+Change permissions to 400
+ssh -T git@github.com
+
+
+--- NODE.JS ---
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install 14
+node -v
+
+
+--- GO ---
+
+wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
+tar -xzf go1.18.linux-amd64.tar.gz -C /usr/local/
+export PATH=$PATH:/usr/local/go/bin
+export GO111MODULE=on
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+go version
